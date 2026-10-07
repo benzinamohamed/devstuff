@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="g100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Benzina Mohamed - Web Developer with 2 years of experience. Built in the IBM Design Language & Carbon Design System aesthetic.">
+  <meta name="keywords" content="Benzina Mohamed, Web Developer, IBM Design Language, Carbon Design System, Frontend, JavaScript, Portfolio">
+  <meta name="author" content="Benzina Mohamed">
+  <title>Benzina Mohamed — Web Developer | IBM Design Language</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cds--body">
+  <header class="cds--header" id="cds-header">
+    <div class="cds--header__container">
+      <div class="cds--header__left">
+        <button class="cds--header__menu-trigger" id="menu-trigger" aria-label="Open menu" aria-expanded="false">
+          <span class="cds--header__menu-icon"></span>
+        </button>
+        <a href="#hero" class="cds--header__name">
+          <span class="cds--header__brand">IBM</span>
+          <span class="cds--header__separator">/</span>
+          <span class="cds--header__title">Benzina Mohamed</span>
+          <span class="cds--tag cds--tag--sm cds--tag--blue cds--header__role-tag">Web Dev • 2 YOE</span>
+        </a>
+      </div>
+      <nav class="cds--header__nav" id="main-nav">
+        <ul class="cds--header__menu-bar">
+          <li><a href="#hero" class="cds--header__menu-item active">Overview</a></li>
+          <li><a href="#about" class="cds--header__menu-item">About</a></li>
+          <li><a href="#skills" class="cds--header__menu-item">Capabilities</a></li>
+          <li><a href="#experience" class="cds--header__menu-item">Experience</a></li>
+          <li><a href="#projects" class="cds--header__menu-item">Projects</a></li>
+          <li><a href="#contact" class="cds--header__menu-item">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cds--header__actions">
+        <button id="theme-toggle" class="cds--header__action-btn" title="Toggle Theme (Gray 100 / White)" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon theme-icon-dark"></i>
+          <i class="fa-solid fa-sun theme-icon-light"></i>
+        </button>
+        <a href="#contact" class="cds--btn cds--btn--sm cds--btn--primary cds--header__cta">
+          <span>Get in touch</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="cds--side-nav-overlay" id="nav-overlay"></div>
+  <main class="cds--content">
+    <section class="cds--section hero-section" id="hero">
+      <div class="cds--grid">
+        <div class="cds--row hero-row">
+          <div class="cds--col-lg-10 cds--col-md-8 cds--col-sm-4">
+            <div class="cds--lead-mono">
+              <span class="mono-prefix">$ dev.profile //</span>
+              <span class="mono-status"><span class="status-indicator"></span> status: open_to_work</span>
+              <span class="mono-exp">experience: 2.0_years</span>
+            </div>
+            <h1 class="hero-headline">
+              Benzina Mohamed
+              <span class="hero-subhead">Web Developer & Frontend Engineer</span>
+            </h1>
+            <div class="terminal-tile">
+              <span class="terminal-prompt">&gt; specializes_in:</span>
+              <span class="terminal-typing" id="typing-text"></span>
+              <span class="terminal-cursor">_</span>
+            </div>
+            <p class="hero-paragraph">
+              Engineering enterprise-grade, accessible, and high-performance web applications with <strong>2 years of hands-on experience</strong>. Grounded in functional JavaScript, semantic HTML5, modern CSS architectures, and user-centric system design.
+            </p>
+            <div class="hero-button-set">
+              <a href="#projects" class="cds--btn cds--btn--primary">
+                <span>View Portfolio Projects</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#contact" class="cds--btn cds--btn--secondary">
+                <span>Contact Engineer</span>
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="#about" class="cds--btn cds--btn--tertiary" id="cv-btn">
+                <span>Download Spec / CV</span>
+                <i class="fa-solid fa-file-code"></i>
+              </a>
+            </div>
+            <div class="hero-meta-strip">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="meta-link">
+                <i class="fa-brands fa-github"></i> <span>github.com</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="meta-link">
+                <i class="fa-brands fa-linkedin"></i> <span>linkedin.com</span>
+              </a>
+              <a href="mailto:benzina.mohamed@example.com" class="meta-link">
+                <i class="fa-solid fa-at"></i> <span>benzina.mohamed@example.com</span>
+              </a>
+            </div>
+          </div>
+          <div class="cds--col-lg-6 cds--col-md-8 cds--col-sm-4 hero-stats-col">
+            <div class="stats-matrix">
+              <div class="cds--tile metric-tile">
+                <div class="metric-num"><span class="stat-number" data-target="2">0</span><span class="metric-plus">+</span></div>
+                <div class="metric-label">Years Experience</div>
+                <div class="metric-sub">Commercial & Client Web Delivery</div>
+              </div>
+              <div class="cds--tile metric-tile">
+                <div class="metric-num"><span class="stat-number" data-target="25">0</span><span class="metric-plus">+</span></div>
+                <div class="metric-label">Production Modules</div>
+                <div class="metric-sub">Components, SPAs & APIs</div>
+              </div>
+              <div class="cds--tile metric-tile">
+                <div class="metric-num"><span class="stat-number" data-target="100">0</span><span class="metric-plus">%</span></div>
+                <div class="metric-label">Clean Code & Tests</div>
+                <div class="metric-sub">W3C & WCAG Standards Adherent</div>
+              </div>
+              <div class="cds--tile metric-tile">
+                <div class="metric-num"><span class="stat-number" data-target="15">0</span><span class="metric-plus">+</span></div>
+                <div class="metric-label">Tech Ecosystems</div>
+                <div class="metric-sub">JS, APIs, Tooling & Modern CSS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cds--section" id="about">
+      <div class="cds--grid">
+        <div class="cds--row">
+          <div class="cds--col-lg-16">
+            <div class="section-lead-badge">
+              <span class="cds--tag cds--tag--blue">01 // PROFILE</span>
+            </div>
+            <h2 class="section-title">About the Developer</h2>
+            <p class="section-description">
+              Focused on clarity, system architecture, and scalable frontend engineering.
+            </p>
+          </div>
+        </div>
+        <div class="cds--row about-details-row">
+          <div class="cds--col-lg-10 cds--col-md-8">
+            <div class="cds--tile content-tile">
+              <h3 class="tile-headline">Bridging technical precision with ergonomic digital experiences</h3>
+              <p class="body-text">
+                I am <strong>Benzina Mohamed</strong>, a Web Developer with two continuous years of engineering experience across the full frontend spectrum. I approach software through the lens of clarity: clear logic, robust architecture, and thoughtful human-machine interactions.
+              </p>
+              <p class="body-text">
+                My daily work centers around Vanilla JavaScript, modern CSS Grid/Flexbox architecture, responsive DOM engineering, and RESTful API communications. I value maintainability over hype, crafting resilient web systems that load fast, scale predictably, and conform to high accessibility (WCAG 2.1 AA) standards.
+              </p>
+              <div class="spec-table-container">
+                <table class="cds--data-table">
+                  <tbody>
+                    <tr>
+                      <td class="spec-label">FULL NAME</td>
+                      <td class="spec-value">Benzina Mohamed</td>
+                      <td class="spec-label">LOCATION</td>
+                      <td class="spec-value">Remote / Global Relocation Ready</td>
+                    </tr>
+                    <tr>
+                      <td class="spec-label">EXPERIENCE</td>
+                      <td class="spec-value">2 Years Professional</td>
+                      <td class="spec-label">AVAILABILITY</td>
+                      <td class="spec-value"><span class="cds--tag cds--tag--green">Immediate Start</span></td>
+                    </tr>
+                    <tr>
+                      <td class="spec-label">FOCUS AREAS</td>
+                      <td class="spec-value" colspan="3">JavaScript ES6+, Modern Web Platforms, UI Engineering, REST APIs</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-6 cds--col-md-8">
+            <div class="pillars-stack">
+              <div class="cds--tile philosophy-tile">
+                <div class="tile-number">01</div>
+                <h4 class="philosophy-title">Purpose-Built Architecture</h4>
+                <p class="philosophy-text">Writing modular, zero-bloat code where every script and style serves a measurable purpose.</p>
+              </div>
+              <div class="cds--tile philosophy-tile">
+                <div class="tile-number">02</div>
+                <h4 class="philosophy-title">Universal Accessibility</h4>
+                <p class="philosophy-text">Semantic HTML, proper ARIA landmarks, keyboard navigation, and contrast compliance.</p>
+              </div>
+              <div class="cds--tile philosophy-tile">
+                <div class="tile-number">03</div>
+                <h4 class="philosophy-title">Responsive Precision</h4>
+                <p class="philosophy-text">Fluid typography and 2x grid systems that respond seamlessly across all display matrices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cds--section" id="skills">
+      <div class="cds--grid">
+        <div class="cds--row">
+          <div class="cds--col-lg-16">
+            <div class="section-lead-badge">
+              <span class="cds--tag cds--tag--teal">02 // CAPABILITIES</span>
+            </div>
+            <h2 class="section-title">Technical Competencies & Toolchain</h2>
+            <p class="section-description">
+              Core languages, runtime environments, and development methodologies.
+            </p>
+          </div>
+        </div>
+        <div class="cds--row">
+          <div class="cds--col-lg-16">
+            <div class="cds--tabs" role="tablist">
+              <button class="cds--tabs__nav-link active" data-category="all" role="tab">All Stack</button>
+              <button class="cds--tabs__nav-link" data-category="frontend" role="tab">Frontend</button>
+              <button class="cds--tabs__nav-link" data-category="backend" role="tab">Backend & APIs</button>
+              <button class="cds--tabs__nav-link" data-category="tools" role="tab">Workflow & DevOps</button>
+            </div>
+          </div>
+        </div>
+        <div class="cds--row skills-grid" id="skills-grid">
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="frontend">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--cyan">FRONTEND</span>
+                <span class="skill-level-pct">95%</span>
+              </div>
+              <h4 class="skill-name">JavaScript (ES6+)</h4>
+              <p class="skill-desc">Async/Await, DOM Manipulation, Closures, Event Loop & OOP.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 95%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="frontend">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--blue">CORE</span>
+                <span class="skill-level-pct">95%</span>
+              </div>
+              <h4 class="skill-name">HTML5 & Web Standards</h4>
+              <p class="skill-desc">Semantic elements, WCAG 2.1 AA accessibility, Web APIs.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 95%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="frontend">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--purple">STYLING</span>
+                <span class="skill-level-pct">90%</span>
+              </div>
+              <h4 class="skill-name">CSS3 / Grid & Flexbox</h4>
+              <p class="skill-desc">Design tokens, CSS Variables, keyframe animations & responsive layout.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 90%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="frontend">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--cyan">FRAMEWORK</span>
+                <span class="skill-level-pct">80%</span>
+              </div>
+              <h4 class="skill-name">React.js Ecosystem</h4>
+              <p class="skill-desc">Hooks, component architecture, state management & virtual DOM.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 80%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="backend">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--green">RUNTIME</span>
+                <span class="skill-level-pct">75%</span>
+              </div>
+              <h4 class="skill-name">Node.js & Express</h4>
+              <p class="skill-desc">Server-side runtime, route handlers, middleware & authentication.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 75%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="backend">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--teal">INTEGRATION</span>
+                <span class="skill-level-pct">90%</span>
+              </div>
+              <h4 class="skill-name">REST APIs & Fetch Engine</h4>
+              <p class="skill-desc">CRUD operations, JSON serialization, headers & error interceptors.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 90%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="backend">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--green">DATABASE</span>
+                <span class="skill-level-pct">72%</span>
+              </div>
+              <h4 class="skill-name">SQL & Data Models</h4>
+              <p class="skill-desc">Schema design, relational queries, indices, PostgreSQL & SQLite.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 72%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="tools">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--magenta">VCS</span>
+                <span class="skill-level-pct">85%</span>
+              </div>
+              <h4 class="skill-name">Git & GitHub</h4>
+              <p class="skill-desc">Branch strategies, pull requests, semantic commits & code reviews.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 85%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-4 cds--col-md-4 cds--col-sm-4 skill-item" data-category="tools">
+            <div class="cds--tile skill-tile">
+              <div class="skill-tile-header">
+                <span class="cds--tag cds--tag--blue">TOOLING</span>
+                <span class="skill-level-pct">85%</span>
+              </div>
+              <h4 class="skill-name">Vite / NPM / DevTools</h4>
+              <p class="skill-desc">Asset bundling, performance profiling, DOM inspection & lighthouse.</p>
+              <div class="cds--progress-bar">
+                <div class="cds--progress-bar__fill" style="--percent: 85%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cds--section" id="experience">
+      <div class="cds--grid">
+        <div class="cds--row">
+          <div class="cds--col-lg-16">
+            <div class="section-lead-badge">
+              <span class="cds--tag cds--tag--purple">03 // TIMELINE</span>
+            </div>
+            <h2 class="section-title">2 Years Professional Experience</h2>
+            <p class="section-description">
+              Verified commercial track record delivering production-ready web interfaces.
+            </p>
+          </div>
+        </div>
+        <div class="cds--row">
+          <div class="cds--col-lg-16">
+            <div class="carbon-timeline">
+              <div class="timeline-entry">
+                <div class="timeline-aside">
+                  <span class="timeline-date-mono">2023 — PRESENT</span>
+                  <span class="cds--tag cds--tag--green">CURRENT ROLE</span>
+                </div>
+                <div class="timeline-divider">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-line"></div>
+                </div>
+                <div class="cds--tile timeline-body">
+                  <div class="timeline-heading-group">
+                    <h3 class="timeline-role">Web Developer</h3>
+                    <h4 class="timeline-org">Client Web Solutions & Freelance Projects</h4>
+                  </div>
+                  <p class="timeline-paragraph">
+                    Directed the architecture and delivery of performant websites, dashboards, and custom web applications. Transformed legacy code into modular, maintainable JavaScript components.
+                  </p>
+                  <ul class="timeline-deliverables">
+                    <li>Engineered custom SPA modules and UI component suites without dependency overhead.</li>
+                    <li>Decreased First Contentful Paint (FCP) and Time to Interactive (TTI) by ~40% through asset minification, lazy loading, and DOM refactoring.</li>
+                    <li>Interfaced directly with backend REST services to handle asynchronous workflows and local caching.</li>
+                  </ul>
+                  <div class="timeline-badges">
+                    <span class="cds--tag cds--tag--sm">JavaScript ES6+</span>
+                    <span class="cds--tag cds--tag--sm">CSS Grid Architecture</span>
+                    <span class="cds--tag cds--tag--sm">RESTful APIs</span>
+                    <span class="cds--tag cds--tag--sm">WCAG 2.1</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-entry">
+                <div class="timeline-aside">
+                  <span class="timeline-date-mono">2022 — 2023</span>
+                  <span class="cds--tag cds--tag--blue">YEAR 01</span>
+                </div>
+                <div class="timeline-divider">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-line"></div>
+                </div>
+                <div class="cds--tile timeline-body">
+                  <div class="timeline-heading-group">
+                    <h3 class="timeline-role">Junior Frontend Web Developer</h3>
+                    <h4 class="timeline-org">Web Studio Collaborations & Contract Projects</h4>
+                  </div>
+                  <p class="timeline-paragraph">
+                    Built, tested, and shipped responsive landing pages, interactive calculators, modal dialogs, and navigation systems across multiple client deliverables.
+                  </p>
+                  <ul class="timeline-deliverables">
+                    <li>Translated high-fidelity Figma mockups into exact HTML5/CSS3 templates.</li>
+                    <li>Authored accessible, keyboard-navigable form validation and widget scripts in pure Vanilla JS.</li>
+                    <li>Utilized Git version control to resolve code conflicts and participate in systematic peer reviews.</li>
+                  </ul>
+                  <div class="timeline-badges">
+                    <span class="cds--tag cds--tag--sm">Semantic HTML5</span>
+                    <span class="cds--tag cds--tag--sm">Vanilla JS</span>
+                    <span class="cds--tag cds--tag--sm">Responsive Design</span>
+                    <span class="cds--tag cds--tag--sm">Git</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-entry">
+                <div class="timeline-aside">
+                  <span class="timeline-date-mono">2020 — 2022</span>
+                  <span class="cds--tag cds--tag--gray">FOUNDATION</span>
+                </div>
+                <div class="timeline-divider">
+                  <div class="timeline-dot"></div>
+                </div>
+                <div class="cds--tile timeline-body">
+                  <div class="timeline-heading-group">
+                    <h3 class="timeline-role">Computer Science & Software Foundations</h3>
+                    <h4 class="timeline-org">Technical Diploma & Applied Software Curricula</h4>
+                  </div>
+                  <p class="timeline-paragraph">
+                    Rigorous study of data structures, algorithm efficiency, relational database modeling (SQL), software architecture, and modern Internet protocol standards.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cds--section" id="projects">
+      <div class="cds--grid">
+        <div class="cds--row">
+          <div class="cds--col-lg-16">
+            <div class="section-lead-badge">
+              <span class="cds--tag cds--tag--magenta">04 // PORTFOLIO</span>
+            </div>
+            <h2 class="section-title">Featured Production Implementations</h2>
+            <p class="section-description">
+              Production-tested systems demonstrating pure JavaScript mastery, architectural cleanliness, and responsive design.
+            </p>
+          </div>
+        </div>
+        <div class="cds--row">
+          <div class="cds--col-lg-16">
+            <div class="cds--tabs project-filter-tabs">
+              <button class="cds--tabs__nav-link active" data-filter="all">All Projects (6)</button>
+              <button class="cds--tabs__nav-link" data-filter="pure-js">Pure JS Engineering</button>
+              <button class="cds--tabs__nav-link" data-filter="frontend">Frontend Systems</button>
+              <button class="cds--tabs__nav-link" data-filter="fullstack">Web Applications</button>
+            </div>
+          </div>
+        </div>
+        <div class="cds--row projects-grid" id="projects-grid">
+          <div class="cds--col-lg-8 cds--col-md-8 cds--col-sm-4 project-col" data-category="pure-js fullstack">
+            <div class="cds--tile cds--tile--clickable project-tile" data-project="1">
+              <div class="project-header">
+                <span class="project-mono-id">PRJ_01 // ANALYTICS</span>
+                <span class="cds--tag cds--tag--blue">PURE JS</span>
+              </div>
+              <h3 class="project-tile-title">Interactive Telemetry & Metrics Dashboard</h3>
+              <p class="project-tile-desc">
+                Enterprise telemetry monitoring dashboard written in 100% vanilla JavaScript. Implements custom SVG render engines, interval stream simulations, and local state persistence without chart dependencies.
+              </p>
+              <div class="project-stack">
+                <span class="stack-token">Vanilla JS</span>
+                <span class="stack-token">CSS Grid</span>
+                <span class="stack-token">SVG Engine</span>
+                <span class="stack-token">LocalStorage</span>
+              </div>
+              <div class="project-tile-footer">
+                <span class="action-text">Inspect System Spec</span>
+                <i class="fa-solid fa-arrow-right action-arrow"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-8 cds--col-md-8 cds--col-sm-4 project-col" data-category="pure-js frontend">
+            <div class="cds--tile cds--tile--clickable project-tile" data-project="2">
+              <div class="project-header">
+                <span class="project-mono-id">PRJ_02 // KANBAN</span>
+                <span class="cds--tag cds--tag--teal">PRODUCTIVITY</span>
+              </div>
+              <h3 class="project-tile-title">TaskFlow — Modular Agile Kanban System</h3>
+              <p class="project-tile-desc">
+                High-performance workflow board utilizing the native HTML5 Drag and Drop API. Supports drag ghosts, custom priority queues, inline editing, and bidirectional JSON state import/export.
+              </p>
+              <div class="project-stack">
+                <span class="stack-token">HTML5 Drag & Drop</span>
+                <span class="stack-token">JavaScript ES6+</span>
+                <span class="stack-token">JSON State</span>
+              </div>
+              <div class="project-tile-footer">
+                <span class="action-text">Inspect System Spec</span>
+                <i class="fa-solid fa-arrow-right action-arrow"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-8 cds--col-md-8 cds--col-sm-4 project-col" data-category="pure-js fullstack">
+            <div class="cds--tile cds--tile--clickable project-tile" data-project="3">
+              <div class="project-header">
+                <span class="project-mono-id">PRJ_03 // WEATHER</span>
+                <span class="cds--tag cds--tag--cyan">REST API</span>
+              </div>
+              <h3 class="project-tile-title">SkyCast Atmospheric Forecast Client</h3>
+              <p class="project-tile-desc">
+                Meteorological data client with geolocation coordinate queries, multi-day weather forecasts via Fetch API, error handling with exponential backoff, and unit normalization.
+              </p>
+              <div class="project-stack">
+                <span class="stack-token">Fetch API</span>
+                <span class="stack-token">Geolocation</span>
+                <span class="stack-token">Async Handlers</span>
+              </div>
+              <div class="project-tile-footer">
+                <span class="action-text">Inspect System Spec</span>
+                <i class="fa-solid fa-arrow-right action-arrow"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-8 cds--col-md-8 cds--col-sm-4 project-col" data-category="frontend fullstack">
+            <div class="cds--tile cds--tile--clickable project-tile" data-project="4">
+              <div class="project-header">
+                <span class="project-mono-id">PRJ_04 // COMMERCE</span>
+                <span class="cds--tag cds--tag--purple">FRONTEND</span>
+              </div>
+              <h3 class="project-tile-title">NovaStore Scalable E-Commerce Frontend</h3>
+              <p class="project-tile-desc">
+                High-converting responsive storefront with client-side cart calculation engine, promo voucher validation, dynamic catalog filtering, and multi-step modal checkout.
+              </p>
+              <div class="project-stack">
+                <span class="stack-token">State Machine</span>
+                <span class="stack-token">Cart Engine</span>
+                <span class="stack-token">Event Delegation</span>
+              </div>
+              <div class="project-tile-footer">
+                <span class="action-text">Inspect System Spec</span>
+                <i class="fa-solid fa-arrow-right action-arrow"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-8 cds--col-md-8 cds--col-sm-4 project-col" data-category="pure-js frontend">
+            <div class="cds--tile cds--tile--clickable project-tile" data-project="5">
+              <div class="project-header">
+                <span class="project-mono-id">PRJ_05 // DEVTOOL</span>
+                <span class="cds--tag cds--tag--green">UTILITY</span>
+              </div>
+              <h3 class="project-tile-title">CSS Gradient & Box-Shadow Studio</h3>
+              <p class="project-tile-desc">
+                Visual generator for complex multi-layer shadows and linear/radial gradients. Generates cross-browser CSS code directly to system clipboard via Navigator Clipboard API.
+              </p>
+              <div class="project-stack">
+                <span class="stack-token">Clipboard API</span>
+                <span class="stack-token">CSS Variables</span>
+                <span class="stack-token">Canvas / DOM</span>
+              </div>
+              <div class="project-tile-footer">
+                <span class="action-text">Inspect System Spec</span>
+                <i class="fa-solid fa-arrow-right action-arrow"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-8 cds--col-md-8 cds--col-sm-4 project-col" data-category="frontend fullstack">
+            <div class="cds--tile cds--tile--clickable project-tile" data-project="6">
+              <div class="project-header">
+                <span class="project-mono-id">PRJ_06 // MESSAGING</span>
+                <span class="cds--tag cds--tag--magenta">REALTIME UI</span>
+              </div>
+              <h3 class="project-tile-title">Pulse Enterprise Chat Engine Interface</h3>
+              <p class="project-tile-desc">
+                Real-time messaging UI prototype with reactive response generation, sound notification via HTML5 Web Audio API, message timestamping, and keyboard shortcut listeners.
+              </p>
+              <div class="project-stack">
+                <span class="stack-token">Web Audio API</span>
+                <span class="stack-token">Virtual Scrolling</span>
+                <span class="stack-token">Keyboard Shortcuts</span>
+              </div>
+              <div class="project-tile-footer">
+                <span class="action-text">Inspect System Spec</span>
+                <i class="fa-solid fa-arrow-right action-arrow"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="cds--modal-backdrop" id="project-modal" aria-hidden="true" role="dialog">
+      <div class="cds--modal">
+        <div class="cds--modal__header">
+          <span class="cds--modal__label" id="modal-project-label">SPECIFICATION VIEW</span>
+          <h2 class="cds--modal__title" id="modal-project-title">System Architecture</h2>
+          <button class="cds--modal__close-btn" id="modal-close" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="cds--modal__body" id="modal-project-body">
+        </div>
+        <div class="cds--modal__footer">
+          <button class="cds--btn cds--btn--secondary" id="modal-close-action">Dismiss</button>
+          <a href="#" class="cds--btn cds--btn--primary" id="modal-demo-link" target="_blank" rel="noopener noreferrer">
+            <span>Launch Repository</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <section class="cds--section contact-section" id="contact">
+      <div class="cds--grid">
+        <div class="cds--row">
+          <div class="cds--col-lg-16">
+            <div class="section-lead-badge">
+              <span class="cds--tag cds--tag--green">05 // DISPATCH</span>
+            </div>
+            <h2 class="section-title">Initiate Direct Communication</h2>
+            <p class="section-description">
+              Currently accepting full-time opportunities, engineering contracts, and technical collaborations.
+            </p>
+          </div>
+        </div>
+        <div class="cds--row contact-main-row">
+          <div class="cds--col-lg-7 cds--col-md-8 contact-info-col">
+            <div class="cds--tile contact-spec-tile">
+              <h3 class="tile-headline">Direct Engineering Channels</h3>
+              <p class="body-text">
+                Responses typically delivered within 24 hours. For urgent opportunities or contract technical reviews, email is preferred.
+              </p>
+              <div class="channel-list">
+                <div class="channel-item">
+                  <div class="channel-label">ELECTRONIC MAIL</div>
+                  <a href="mailto:benzina.mohamed@example.com" class="channel-val">benzina.mohamed@example.com</a>
+                </div>
+                <div class="channel-item">
+                  <div class="channel-label">PHONE / WHATSAPP</div>
+                  <a href="tel:+1234567890" class="channel-val">+ (123) 456-7890</a>
+                </div>
+                <div class="channel-item">
+                  <div class="channel-label">PRIMARY REGION</div>
+                  <span class="channel-val">Tunisia / Global Remote (UTC+1)</span>
+                </div>
+                <div class="channel-item">
+                  <div class="channel-label">AVAILABILITY WINDOW</div>
+                  <span class="channel-val"><span class="status-indicator"></span> Immediate Work Start</span>
+                </div>
+              </div>
+              <div class="channel-tokens">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="token-btn">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="token-btn">
+                  <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="token-btn">
+                  <i class="fa-brands fa-x-twitter"></i> <span>Twitter</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="cds--col-lg-9 cds--col-md-8 contact-form-col">
+            <div class="cds--tile form-tile">
+              <h3 class="tile-headline">Dispatch Message</h3>
+              <form id="contact-form" novalidate>
+                <div class="form-row-2">
+                  <div class="cds--form-item">
+                    <label for="name" class="cds--label">SENDER NAME <span class="required-star">*</span></label>
+                    <input type="text" id="name" name="name" class="cds--text-input" placeholder="e.g. Jane Doe" required>
+                    <div class="cds--form-requirement" id="name-error"></div>
+                  </div>
+                  <div class="cds--form-item">
+                    <label for="email" class="cds--label">EMAIL ADDRESS <span class="required-star">*</span></label>
+                    <input type="email" id="email" name="email" class="cds--text-input" placeholder="e.g. jane@company.com" required>
+                    <div class="cds--form-requirement" id="email-error"></div>
+                  </div>
+                </div>
+                <div class="cds--form-item">
+                  <label for="subject" class="cds--label">SUBJECT HEADER <span class="required-star">*</span></label>
+                  <input type="text" id="subject" name="subject" class="cds--text-input" placeholder="Role Inquiry / Contract Web Project" required>
+                  <div class="cds--form-requirement" id="subject-error"></div>
+                </div>
+                <div class="cds--form-item">
+                  <label for="message" class="cds--label">MESSAGE BODY <span class="required-star">*</span></label>
+                  <textarea id="message" name="message" class="cds--text-area" rows="5" placeholder="Specify project requirements, technical specs, or role overview..." required></textarea>
+                  <div class="cds--form-requirement" id="message-error"></div>
+                </div>
+                <button type="submit" class="cds--btn cds--btn--primary submit-btn" id="submit-btn">
+                  <span class="btn-copy">Transmit Message</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="cds--footer">
+    <div class="cds--grid">
+      <div class="cds--row footer-row">
+        <div class="cds--col-lg-8 cds--col-md-4">
+          <div class="footer-brand">
+            <span class="brand-code">IBM Design Language &amp; Carbon System Aesthetic</span>
+            <p class="footer-copy-text">
+              Authored by <strong>Benzina Mohamed</strong>. Pure Vanilla JavaScript ES6+, Semantic HTML5, and Carbon Tokens. No framework dependencies.
+            </p>
+          </div>
+        </div>
+        <div class="cds--col-lg-8 cds--col-md-4 footer-links-col">
+          <div class="footer-links-group">
+            <a href="#hero">Top</a>
+            <a href="#about">About</a>
+            <a href="#skills">Capabilities</a>
+            <a href="#experience">Timeline</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <p class="copyright-line">&copy; <span id="current-year">2026</span> Benzina Mohamed. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="cds--toast-container" id="toast-container" aria-live="polite"></div>
+  <button id="back-to-top" class="cds--btn-top" aria-label="Scroll to top of document" title="Return to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <script src="script.js"></script>
+</body>
+</html>
