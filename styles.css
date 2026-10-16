@@ -166,6 +166,7 @@ a {
   padding-bottom: var(--cds-spacing-10);
   border-bottom: 1px solid var(--cds-border-subtle);
   position: relative;
+  scroll-margin-top: var(--cds-header-height);
 }
 .section-lead-badge {
   margin-bottom: var(--cds-spacing-04);
@@ -230,6 +231,7 @@ a {
   height: 2px;
   background: #ffffff;
   position: relative;
+  transition: background-color 0.2s ease;
 }
 .cds--header__menu-icon::before,
 .cds--header__menu-icon::after {
@@ -239,9 +241,22 @@ a {
   height: 2px;
   background: #ffffff;
   left: 0;
+  transition: transform 0.2s ease, top 0.2s ease, bottom 0.2s ease;
 }
 .cds--header__menu-icon::before { top: -6px; }
 .cds--header__menu-icon::after { bottom: -6px; }
+
+.cds--header__menu-trigger[aria-expanded="true"] .cds--header__menu-icon {
+  background: transparent;
+}
+.cds--header__menu-trigger[aria-expanded="true"] .cds--header__menu-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.cds--header__menu-trigger[aria-expanded="true"] .cds--header__menu-icon::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
 .cds--header__name {
   display: flex;
   align-items: center;
@@ -251,6 +266,7 @@ a {
   font-weight: 400;
   color: #ffffff;
   height: 100%;
+  white-space: nowrap;
 }
 .cds--header__brand {
   font-weight: 700;
@@ -1239,21 +1255,37 @@ a {
     height: calc(100vh - var(--cds-header-height));
     background-color: #161616;
     border-right: 1px solid var(--cds-border-subtle);
-    transition: left 0.2s ease;
+    transition: left 0.2s ease, visibility 0.2s ease;
+    visibility: hidden;
+    overflow-y: auto;
+    z-index: 1001;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
   }
   .cds--header__nav.active {
     left: 0;
+    visibility: visible;
   }
   .cds--header__menu-bar {
     flex-direction: column;
+    width: 100%;
+    padding: var(--cds-spacing-03) 0;
   }
   .cds--header__menu-item {
     height: 48px;
+    width: 100%;
     border-bottom: none;
     border-left: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--cds-spacing-05);
+  }
+  .cds--header__menu-item:hover {
+    background-color: #262626;
   }
   .cds--header__menu-item.active {
     border-left-color: var(--cds-interactive);
+    background-color: #262626;
+    color: #ffffff;
   }
   .cds--header__role-tag,
   .cds--header__cta {

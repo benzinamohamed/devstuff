@@ -24,24 +24,41 @@ document.addEventListener('DOMContentLoaded', () => {
       mainNav.classList.add('active');
       if (navOverlay) navOverlay.classList.add('active');
       menuTrigger.setAttribute('aria-expanded', 'true');
+      menuTrigger.setAttribute('aria-label', 'Close menu');
       document.body.style.overflow = 'hidden';
     } else {
       mainNav.classList.remove('active');
       if (navOverlay) navOverlay.classList.remove('active');
       menuTrigger.setAttribute('aria-expanded', 'false');
+      menuTrigger.setAttribute('aria-label', 'Open menu');
       document.body.style.overflow = '';
     }
   };
   if (menuTrigger) {
-    menuTrigger.addEventListener('click', () => toggleMobileNav());
+    menuTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileNav();
+    });
   }
   if (navOverlay) {
     navOverlay.addEventListener('click', () => toggleMobileNav(true));
   }
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        toggleMobileNav(true);
+  
+  // Smooth scroll handler for all internal anchor links (header, hero, drawer, footer)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        if (mainNav && mainNav.classList.contains('active')) {
+          toggleMobileNav(true);
+        }
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
       }
     });
   });
@@ -167,13 +184,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const skillCards = document.querySelectorAll('.skill-item');
   skillTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      skillTabs.forEach(t => t.classList.remove('active'));
+      skillTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
       const filterCat = tab.getAttribute('data-category');
       skillCards.forEach(card => {
         const cardCat = card.getAttribute('data-category');
         if (filterCat === 'all' || cardCat === filterCat) {
-          card.style.display = 'block';
+          card.style.display = '';
           card.style.animation = 'fadeIn 0.25s ease forwards';
         } else {
           card.style.display = 'none';
@@ -185,13 +206,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectCols = document.querySelectorAll('.project-col');
   projectTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      projectTabs.forEach(t => t.classList.remove('active'));
+      projectTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
       const filterType = tab.getAttribute('data-filter');
       projectCols.forEach(col => {
         const categories = col.getAttribute('data-category').split(' ');
         if (filterType === 'all' || categories.includes(filterType)) {
-          col.style.display = 'block';
+          col.style.display = '';
           col.style.animation = 'fadeIn 0.25s ease forwards';
         } else {
           col.style.display = 'none';
@@ -348,6 +373,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (projectModal && projectModal.classList.contains('active')) closeModal();
       if (mainNav && mainNav.classList.contains('active')) toggleMobileNav(true);
     }
+    if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.classList.contains('project-tile')) {
+      e.preventDefault();
+      const id = e.target.getAttribute('data-project');
+      openModal(id);
+    }
   });
   const contactForm = document.getElementById('contact-form');
   const submitBtn = document.getElementById('submit-btn');
@@ -430,7 +460,44 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cvBtn) {
     cvBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      showCarbonToast('Engineer curriculum & technical spec generated.', 'success');
+      const specContent = `================================================================================
+BENZINA MOHAMED — CURRICULUM & TECHNICAL SPECIFICATION
+Web Developer & Frontend Engineer | IBM Carbon Design System Aesthetic
+Experience: 2.0 Years | Contact: benzina.mohamed@example.com
+================================================================================
+
+[01] CORE CAPABILITIES & TECH STACK
+--------------------------------------------------------------------------------
+- Frontend: Vanilla JavaScript (ES6+), HTML5 Semantic Architecture, CSS3 Grid/Flexbox
+- Accessibility: WCAG 2.1 AA Compliance, Keyboard Navigation, ARIA Roles
+- APIs & Systems: RESTful APIs, Asynchronous Fetch Lifecycle, Local State Caching
+- Tooling: Git, Modern Webpack, Zero External Runtime Dependencies
+
+[02] PRODUCTION MODULES & FEATURED PROJECTS
+--------------------------------------------------------------------------------
+1. Interactive Telemetry & Metrics Dashboard (Vanilla JS + Custom SVG Charting Engine)
+2. TaskFlow — Modular Agile Kanban System (Native HTML5 Drag & Drop API)
+3. SkyCast Atmospheric Forecast Client (REST Architecture + Geolocation API)
+4. NovaStore Scalable E-Commerce Frontend (Client-side Cart State Machine)
+5. CSS Gradient & Box-Shadow Studio (Canvas DOM + Navigator Clipboard API)
+6. Pulse Enterprise Chat Engine Interface (Web Audio API Synthesis + Keyboard Shortkeys)
+
+================================================================================
+Status: Available for Full-Time Roles & Engineering Contracts
+Generated from Benzina Mohamed Portfolio
+================================================================================`;
+
+      const blob = new Blob([specContent], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const tempLink = document.createElement('a');
+      tempLink.href = url;
+      tempLink.download = 'Benzina_Mohamed_CV_Spec.txt';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+      URL.revokeObjectURL(url);
+
+      showCarbonToast('Engineer curriculum & technical spec generated and downloaded.', 'success');
     });
   }
   const yearEl = document.getElementById('current-year');
